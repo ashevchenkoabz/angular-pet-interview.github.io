@@ -1,8 +1,0 @@
-<div class="container">
-  <button mat-raised-button color="primary"  [disabled]="poolEmpty$ | async" (click)="teamsService.addTeam()">+ Add team</button>
-  <button mat-raised-button color="warn"  [disabled]="(teams$ | async).length === teamsService.MIN_TEAMS_COUNT" (click)="teamsService.releaseTeam()">Remove team</button>
-
-  <div class="teams-container">
-    <app-team *ngFor="let team of teams$ | async; let i = index" [team]="team" (vote)="teamsService.voteTeam(i, $event)"></app-team>
-  </div>
-</div>
